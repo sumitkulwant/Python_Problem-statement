@@ -29,4 +29,4 @@ for item in grocery_list:
     if budget>= grocery_list[item]:
         print("Amount left can buy you",item)
     else:
-        print("Thank You")
+        pass
