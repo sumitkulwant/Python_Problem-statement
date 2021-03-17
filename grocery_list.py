@@ -1,6 +1,6 @@
 budget=int(input("Enter your budget:"))
 Total_cost=0
-grocery_list={250:"corn flour",100:"wheat",50:"xyz"}
+grocery_list={}
 
 while budget>0:
     print("1.Add an item")
@@ -11,6 +11,7 @@ while budget>0:
         product=input("Enter product:")
         quantity=float(input("Enter quantity in kg:"))
         price=int(input("Enter price per kg:"))
+        grocery_list[product]=price
         Total_cost=price*quantity
         budget=budget-Total_cost
 
@@ -25,7 +26,7 @@ while budget>0:
         print("Invalid input")
 
 for item in grocery_list:
-    if item==budget:
-        print("Amount left can you buy",grocery_list[item])
+    if budget>= grocery_list[item]:
+        print("Amount left can buy you",item)
     else:
-        pass
+        print("Thank You")
